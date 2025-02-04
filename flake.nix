@@ -22,7 +22,6 @@
 				modules = [ 
 					    ./nixos/core.nix 
 					    ./modules/nixos/gnome/default.nix
-					    ./modules/nixos/chromium/brave.nix
 					  ];
 			}; 	
 		};
@@ -33,6 +32,7 @@
 				modules = [ 
 					    ./home-manager/home.nix 
 					    ./modules/home-manager/gnome/default.nix
+					    ./modules/home-manager/chromium/brave.nix
 					  ];
 			}; 	
 		};
