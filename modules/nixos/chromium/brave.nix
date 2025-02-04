@@ -24,8 +24,8 @@
 	];
 
 	commandLineArgs = [
-	  "--disable-features=WebRtcAllowInputVolumeAdjustment"	
-
+	  # NOTE: flag is deprecated it seems
+	  # "--disable-features=WebRtcAllowInputVolumeAdjustment"	
 	];
   };
 }
