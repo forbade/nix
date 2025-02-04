@@ -22,6 +22,7 @@
 				modules = [ 
 					    ./nixos/core.nix 
 					    ./modules/nixos/gnome/default.nix
+					    ./modules/nixos/chromium/brave.nix
 					  ];
 			}; 	
 		};
