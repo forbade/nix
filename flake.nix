@@ -31,7 +31,7 @@
 				inherit pkgs;
 				modules = [ 
 					    ./home-manager/home.nix 
-					    # ./modules/home-manager/gnome/gnome.nix
+					    ./modules/home-manager/gnome/default.nix
 					  ];
 			}; 	
 		};
