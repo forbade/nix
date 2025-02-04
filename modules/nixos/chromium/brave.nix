@@ -23,9 +23,9 @@
 	  { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # uBlock Origin	
 	];
 
-	commandLineArgs = [
+	# commandLineArgs = [
 	  # NOTE: flag is deprecated it seems
 	  # "--disable-features=WebRtcAllowInputVolumeAdjustment"	
-	];
+	# ];
   };
 }
