@@ -6,6 +6,7 @@
   home.stateVersion = "24.11"; 
 
   nixpkgs.config.allowUnfree = true;
+  programs.chromium.extraOpts = [ ];
 
   home.packages = [
     pkgs.spotify

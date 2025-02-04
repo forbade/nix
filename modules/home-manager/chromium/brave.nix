@@ -6,12 +6,13 @@
 	package = pkgs.brave;
 	
 	extensions = [
-	  { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; }
+	#  { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } 
 	];
 	
 	commandLineArgs = [
 	  ""	
 	];
-
+	
   };
+
 } 
