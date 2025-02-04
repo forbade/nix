@@ -14,9 +14,9 @@
 	};
 
 	extraOpts = {
-	  "browserSignin" = 0
-	  "SyncDisabled" = false
-	  "PasswordManagerEnabled" = false
+	  "browserSignin" = 0;
+	  "SyncDisabled" = false;
+	  "PasswordManagerEnabled" = false;
 	};
 
 	extensions = [
