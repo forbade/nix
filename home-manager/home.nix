@@ -19,7 +19,7 @@
   # NOTE: program configurations are stored inside of ../modules 
   programs.brave.enable = true;
   programs.vscode.enable = true;
-  programs.spotify-player.enable = true;
+  programs.spotifyd.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
