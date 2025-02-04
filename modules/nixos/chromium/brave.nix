@@ -27,4 +27,5 @@
 	  "--disable-features=WebRtcAllowInputVolumeAdjustment"	
 
 	];
+  };
 }
