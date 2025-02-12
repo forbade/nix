@@ -78,6 +78,7 @@
     description = "Justin";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+     prismlauncher
     ];
   };
 
@@ -87,6 +88,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
+    wl-clipboard
     gnome-tweaks
     gnome-terminal
   ];

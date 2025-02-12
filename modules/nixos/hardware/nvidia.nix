@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.nvidia.acceptLicense = true;
 
   hardware.graphics = {
 	enable = true;
@@ -18,6 +20,7 @@
 	forceFullCompositionPipeline = true;
 	
 	# Specify stable-version of drivers considering the current setup is using a 1050Ti
+	# package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
 	package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
