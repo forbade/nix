@@ -149,7 +149,7 @@ Dashboard.el
   :config
   (dashboard-setup-startup-hook)
   (setq dashboard-banner-logo-title "in vino veritas")
-  (setq dashboard-startup-banner "~/.config/emacs/images/emacs.png")
+#  (setq dashboard-startup-banner "~/.config/emacs/images/emacs.png")
   (setq dashboard-page-separator "\n\f\n"))
 
 (global-set-key (kbd "M-o") 'dashboard-open)
@@ -349,19 +349,15 @@ Org.el
 	'(
 	  ("g" "generic" plain
 	  "#+TITLE:  %?"
-	  :if-new (file "/mnt/e/Notes/${slug}-%<%m-%d-%Y>.org")
+	  :if-new (file "~/Git/notes/${slug}-%<%m-%d-%Y>.org")
 	  :unnarowed t)
-      ("j" "journal" plain 
-	  (file "/mnt/e/Notes/ref/journal-template.org")
-	  :if-new (file "/mnt/e/Notes/journal-%<%m-%d-%Y>.org")
-	  :unnarowed t)
-     )
+         )
   )
   :config
   (org-roam-db-autosync-mode)
   (require 'org-roam-protocol))
 
-(setq org-roam-directory (file-truename "/mnt/e/Notes/")) ;; errors when put inside use-package :custom module
+(setq org-roam-directory (file-truename "~/Git/notes")) ;; errors when put inside use-package :custom module
 
 ;; (use-package org-roam-ui
     ;; :ensure t)
@@ -486,7 +482,7 @@ UTF-8
 Bookmark directory
 #+begin_src emacs-lisp
 
-(setq bookmark-default-file "~/.config/emacs/bookmarks")
+;; (setq bookmark-default-file "~/.config/emacs/bookmarks")
 
 #+end_src
 
