@@ -1,4 +1,4 @@
-* Multi-host Nix/NixOS system configuration using flakes & home-manager
+* Multi-host Nix/NixOS configuration
 
 WIP learning experience for me, implementing nix-darwin on MacOS machine once main desktop host configuration is done.
 
