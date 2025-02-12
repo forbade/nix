@@ -357,7 +357,7 @@ Org.el
   (org-roam-db-autosync-mode)
   (require 'org-roam-protocol))
 
-(setq org-roam-directory (file-truename "~/Git/notes")) ;; errors when put inside use-package :custom module
+(setq org-roam-directory "~/Git/notes") ;; errors when put inside use-package :custom module
 
 ;; (use-package org-roam-ui
     ;; :ensure t)
