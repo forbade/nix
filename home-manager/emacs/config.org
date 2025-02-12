@@ -351,14 +351,14 @@ Org.el
 	  "#+TITLE:  %?"
 	  :if-new (file "~/Git/notes/${slug}-%<%m-%d-%Y>.org")
 	  :unnarowed t)
-      ("j" "journal" plain 
-	  (file ".dotfiles/home-manager/emacs/templates/journal.org")
+         ("j" "journal" plain 
+	  (file "~/.dotfiles/home-manager/emacs/templates/journal.org")
 	  :if-new (file "~/Git/notes/journal-%<%m-%d-%Y>.org")
 	  :unnarowed t)
-     )
+         )
   :config
   (org-roam-db-autosync-mode)
-  (require 'org-roam-protocol))
+  (require 'org-roam-protocol)))
 
 (setq org-roam-directory "~/Git/notes") ;; errors when put inside use-package :custom module
 
@@ -485,7 +485,7 @@ UTF-8
 Bookmark directory
 #+begin_src emacs-lisp
 
-;; (setq bookmark-default-file "~/.config/emacs/bookmarks")
+(setq bookmark-default-file "~/.emacs.d/bookmarks")
 
 #+end_src
 
