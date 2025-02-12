@@ -11,8 +11,6 @@
 
     pkgs.spotify
 
-    # NUR Packages
-
   ];
 
   home.sessionVariables = {
