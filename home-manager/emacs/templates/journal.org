@@ -1,0 +1,29 @@
+#+TITLE: journal-%<%m-%d-%Y>
+
+
+
+* Data
+
++ Sleep: %?
++ Weight:
++ Acuity:
++ Akrasia:
+  
+* TODOs
+
+
++ Incoming
+  
+	-
+
++ Read
+  
+	- 
+
+* Random
+
++ 
+
+* Journal
+
++ 

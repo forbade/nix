@@ -33,8 +33,8 @@
 
   home.file = {
 
-    ".emacs.d/config.org" = {
-	source = ./emacs/config.org;
+    ".emacs.d/config.el" = {
+	source = ./emacs/config.el;
     };
 
     ".emacs.d/init.el" = {

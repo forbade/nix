@@ -1,12 +1,3 @@
-#+TITLE: Ohne's GNU/Emacs Configuration
-#+AUTHOR: Ohne 
-#+DESCRIPTION: Plain GNU/Emacs Configuration
-#+PROPERTY: header-args :tangle config.el
-
-* Package Management
-MELPA (Package Archive) and default package.el management
-#+begin_src emacs-lisp
-
 (require 'package)
 			
 (add-to-list 'package-archives
@@ -21,14 +12,6 @@ MELPA (Package Archive) and default package.el management
 (use-package magit
 	:ensure t)
 
-#+end_src
-
-* Appearance
-TODO: Modeline, Scaling
-** Themes
-Doom themes
-#+begin_src emacs-lisp
-
 (use-package doom-themes
 	:if window-system
 	:ensure t
@@ -38,22 +21,10 @@ Doom themes
 
 (load-theme 'doom-nord t)
 
-#+end_src
-
-** Font
-Intel One Mono
-#+begin_src emacs-lisp
-
 (when (member "JetBrains Mono" (font-family-list))
 	(set-frame-font "JetBrains Mono-18" t t))
 
 (setq font-lock-maximum-decoration t)
-
-#+end_src 
-
-** UI
-Cleanup
-#+begin_src emacs-lisp
 
 (setq use-dialog-box nil)
 (setq use-file-dialog nil)
@@ -66,31 +37,13 @@ Cleanup
 (scroll-bar-mode -1)
 (global-subword-mode 1)
 
-#+end_src
-
-** Icons
-All The Icons
-#+begin_src emacs-lisp
-
 (use-package all-the-icons
 	:ensure t
 	:if (display-graphic-p))
 
-#+end_src
-
-** Line Numbers
-Relative line numbers
-#+begin_src emacs-lisp
-
 ;; (when (version<= "26.0.50" emacs-version )
 	;; (global-display-line-numbers-mode)
 	;; (setq display-line-numbers-type 'relative))
-
-#+end_src
-
-** Modeline
-Doom-modeline.el 
-#+begin_src emacs-lisp
 
 (use-package doom-modeline
 	:init
@@ -113,13 +66,6 @@ Doom-modeline.el
 (setq doom-modeline-buffer-encoding t)
 (display-time)
 
-#+end_src
-
-** Cursor
-Hl-column/line.el
-#+begin_src emacs-lisp
-
-
 (use-package hl-line
 	:ensure t
 	:config
@@ -129,18 +75,8 @@ Hl-column/line.el
 	:ensure t
 	:config)
 
-#+end_src
-Patch: Org-mode and dashboard breaks hl-column
-#+begin_src emacs-lisp
-
 (add-hook 'org-mode-hook (lambda () (hl-column-mode 0)))
 (add-hook 'dashboard-mode-hook (lambda () (hl-column-mode 0)))
-
-#+end_src 
-
-** Dashboard
-Dashboard.el
-#+begin_src emacs-lisp
 
 (use-package page-break-lines
   :ensure t)
@@ -155,12 +91,6 @@ Dashboard.el
 
 (global-set-key (kbd "M-o") 'dashboard-open)
 
-#+end_src
-
-** Size
-Size and zoomzoom
-#+begin_src emacs-lisp
-
 (set-face-attribute 'default nil :height 170)
 
 ;; (defun increase-emacs-size () 
@@ -171,14 +101,6 @@ Size and zoomzoom
 
 (global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
 (global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
-
-#+end_src
-
-* QOL
-Quality of Life
-** File Completion
-Ivy/Counsel.el
-#+begin_src emacs-lisp
 
 (electric-pair-mode 1)
 
@@ -197,11 +119,6 @@ Ivy/Counsel.el
 (setq warning-minimum-level :error)
 (visual-line-mode t)
 (global-visual-line-mode t)
-#+end_src
-
-** Indents/Tabs
-Patch: tabs not working ootb
-#+begin_src emacs-lisp
 
 (delete-selection-mode 1)
 (setq tab-width 4)
@@ -213,17 +130,7 @@ Patch: tabs not working ootb
 
 ;; (global-set-key (kbd "C-q") 'my-insert-tab-char)
 
-#+end_src
-
-** Binds
-Patch: Enable C-u scrolling with Evil
-#+begin_src emacs-lisp
-
 (setq evil-want-C-u-scroll t)
-
-#+end_src 
-Evil.el 
-#+begin_src emacs-lisp
 
 (use-package evil
 	:init
@@ -232,10 +139,6 @@ Evil.el
 	:config)
 
 (evil-set-undo-system 'undo-redo)
-
-#+end_src 
-Custom Functions
-#+begin_src emacs-lisp
 
 (defun oh/insert-line-below ()
 	(interactive)
@@ -252,15 +155,7 @@ Custom Functions
 (defun oh/insert-elisp-source-block ()
 	(insert "#+begin_src emacs-lisp\n\n#+end_src"))
 
-    #+end_src
-General Global Binds
-#+begin_src emacs-lisp
-
 (global-set-key (kbd "C-;") 'comment-region)
-
-#+end_src
-General.el
-#+begin_src emacs-lisp
 
 (use-package general
 	:ensure t
@@ -312,23 +207,11 @@ General.el
 
 )
 
-#+end_src
-Bind/Key Completion
-#+begin_src emacs-lisp
-
 (use-package which-key
 	:init
 	:ensure t
 	:config
 	(which-key-mode))
-
-#+end_src 
-
-* Development
-
-** Org (org-mode)
-Org.el
-#+begin_src emacs-lisp
 
 (use-package org
     :init
@@ -370,20 +253,10 @@ Org.el
 ;; (use-package org-roam-ui
     ;; :ensure t)
 
-#+end_src
-Patch: electric-indent-mode and org-edit-src-content-indentation breaking babel indentation
-#+begin_src emacs-lisp
-
 ;; (add-hook 'org-mode-hook 
 ;; 	(lambda () (electric-indent-local-mode -1)))
 
 ;; (setq org-edit-src-content-indentation 0)
-
-#+end_src
-
-** LSP
-lsp-mode
-#+begin_src emacs-lisp
 
 (use-package lsp-mode
  	:ensure t)
@@ -398,10 +271,6 @@ lsp-mode
   (setq-local buffer-file-name (->> babel-info caddr (alist-get :tangle)))
   (lsp))
 
-#+end_src
-C/C++
-#+begin_src emacs-lisp
-
 (use-package ccls
   :ensure t
   :config
@@ -411,19 +280,9 @@ C/C++
   :hook ((c-mode c++-mode objc-mode) .
          (lambda () (require 'ccls) (lsp))))
 
-#+end_src
-Python
-#+begin_src emacs-lisp
-
 (use-package lsp-pyright
 	:ensure t
 	:hook (python-mode . (lambda () (require 'lsp-pyright) (lsp))))
-
-#+end_src
-
-** Completion
-Company.el
-#+begin_src emacs-lisp
 
 (use-package company
  	:ensure t)
@@ -440,23 +299,11 @@ Company.el
 (use-package capf-autosuggest
 	:ensure t)
 
-#+end_src
-
-** Project Management
-Projectile.el
-#+begin_src emacs-lisp
-
 ;; Remove parenthesis when done
 (use-package projectile
 	:ensure t)
 	;; :config
 	;; (setq projectile-project-search-path '("~/Projects/" )))
-
-#+end_src
-
-** Sudo
-Sudo-edit.el
-#+begin_src emacs-lisp
 
 ;; (use-package sudo-edit
 ;; 	:config
@@ -464,56 +311,17 @@ Sudo-edit.el
 ;;   	"fu" '(sudo-edit-find-file :wk "Sudo find file")
 ;;   	"fU" '(sudo-edit :wk "Sudo edit file")))
 
-#+end_src 
-
-* Misc
-Miscellaneous
-** Time
-Timezone
-#+begin_src emacs-lisp
-
 (set-time-zone-rule "PHT-8")
-
-#+end_src
-
-** Locale
-UTF-8
-#+begin_src emacs-lisp
 
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
 (set-keyboard-coding-system 'utf-8-unix)
 
-#+end_src
-
-** Bookmarks
-Bookmark directory
-#+begin_src emacs-lisp
-
 (setq bookmark-default-file "~/.emacs.d/bookmarks")
-
-#+end_src
-
-** Colors
-Rainbow mode
-#+begin_src emacs-lisp
 
 (use-package rainbow-mode
 	:ensure t)
 
 (rainbow-mode 1)
 
-#+end_src
-
-** Emacsclient
-Patch: Emacsclient not spawning on dashboard
-#+begin_src emacs-lisp
-
 (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
-
-#+end_src
-
-* DIY Todo 
-- Auto src code block completion (elisp)
-- Bind to increase default face attribute (window size)
-
