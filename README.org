@@ -1,3 +1,11 @@
 * Multi-host Nix/NixOS system configuration using flakes & home-manager
 
 WIP learning experience for me, implementing nix-darwin on MacOS machine once main desktop host configuration is done.
+
+** TODOs
+
++ Fix absolute path issues with config.org (GNU emacs)
++ Add NUR to flake inputs
++ Specify Brave extensions in home-manager configuration 
++ Figure out custom pkgs
++ Dev envs using flakes
