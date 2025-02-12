@@ -351,8 +351,11 @@ Org.el
 	  "#+TITLE:  %?"
 	  :if-new (file "~/Git/notes/${slug}-%<%m-%d-%Y>.org")
 	  :unnarowed t)
-         )
-  )
+      ("j" "journal" plain 
+	  (file ".dotfiles/home-manager/emacs/templates/journal.org")
+	  :if-new (file "~/Git/notes/journal-%<%m-%d-%Y>.org")
+	  :unnarowed t)
+     )
   :config
   (org-roam-db-autosync-mode)
   (require 'org-roam-protocol))
