@@ -89,7 +89,7 @@ Relative line numbers
 
 ** Modeline
 Doom-modeline.el 
- #+begin_src emacs-lisp
+#+begin_src emacs-lisp
 
 (use-package doom-modeline
 	:init
@@ -149,7 +149,7 @@ Dashboard.el
   :config
   (dashboard-setup-startup-hook)
   (setq dashboard-banner-logo-title "in vino veritas")
-#  (setq dashboard-startup-banner "~/.config/emacs/images/emacs.png")
+  ;; (setq dashboard-startup-banner "~/.config/emacs/images/emacs.png")
   (setq dashboard-page-separator "\n\f\n"))
 
 (global-set-key (kbd "M-o") 'dashboard-open)
