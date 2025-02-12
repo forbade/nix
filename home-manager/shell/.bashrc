@@ -1,6 +1,6 @@
-PS1="[\u@\h:\w\]] $ "
+PS1=" [\u@\h:\w\]] $ "
 
-alias cdot = "cd ~/.dotfiles"
-alias cdnote = "cd ~/Git/notes"
-alias l = "ls -la"
-alias ec = "emacsclient -nw"
+alias cdot="cd ~/.dotfiles"
+alias cdnote="cd ~/Git/notes"
+alias l="ls -la"
+alias ec="emacsclient -nw"
