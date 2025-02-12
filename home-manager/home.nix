@@ -46,7 +46,7 @@
     };
 
     ".bashrc" = {
-	source = ./shell/.bashrc;
+	source = ./shell/bashrc;
     };
 
   };
