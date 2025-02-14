@@ -2,16 +2,19 @@
 	description = "Multi-host configuration for MacOS and NixOS systems."; 
 
 	# Git repositories e.g. specific channels that would be otherwise used on default w/o flakes
+
 	inputs = { 
 		nixpkgs.url = "nixpkgs/nixos-24.11";
 		home-manager.url = "github:nix-community/home-manager/release-24.11";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";			# To assure that home-manager is using the same nixpkgs branch as we are using in this flake.
-		spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-		spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+		spicetify-nix = {
+		  url = "github:Gerg-L/spicetify-nix";
+		    inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 	
 	# Receives inputs and systematizes a built system configuration
-	outputs = { self, nixpkgs, home-manager, ... }@inputs:
+	outputs = { self, nixpkgs, home-manager, spicetify-nix, ... }@inputs:
 	let
 		lib = nixpkgs.lib;
 		system = "x86_64-linux";
@@ -35,6 +38,7 @@
 					    ./home-manager/home.nix 
 					    ./modules/home-manager/gnome/default.nix
 					    ./modules/home-manager/chromium/brave.nix
+						# ./modules/home-manager/spotify/default.nix
 					  ];
 			}; 	
 		};

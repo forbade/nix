@@ -20,8 +20,8 @@
 	forceFullCompositionPipeline = true;
 	
 	# Specify stable-version of drivers considering the current setup is using a 1050Ti
-	# package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
-	package = config.boot.kernelPackages.nvidiaPackages.stable;
+	package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
+	# package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
 }

@@ -79,6 +79,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
      prismlauncher
+	 # Since prismlauncher does not support a Nix interface, and further declarative configuration. I'll just list down mods (skyblock).
+	 # Forge mods: Optifine, Patcher, Old Animations, Togglesprint, Scrollable Tooltips, ChatTriggers, Skytils, SkyblockAddons, NotEnoughUpdates, Oringo Client, Odin Client, ...
+	 # CT modules: 
+	 # Resource packs: Bombies 180k red, Furfsky 16x Overlay
     ];
   };
 

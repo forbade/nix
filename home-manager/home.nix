@@ -1,6 +1,7 @@
 { inputs, pkgs, config, ... }:
 
 {
+
   home.username = "justin";
   home.homeDirectory = "/home/justin";
   home.stateVersion = "24.11"; 
@@ -8,9 +9,6 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-
-    pkgs.spotify
-
   ];
 
   home.sessionVariables = {

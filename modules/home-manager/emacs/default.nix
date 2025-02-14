@@ -2,12 +2,9 @@
 
 {
 
-  option.services.emacs = {
-
-	exec = {
-	  ""
-	} 
-
-  }
+options.services.emacs =
+{
+	
+}
 
 }
